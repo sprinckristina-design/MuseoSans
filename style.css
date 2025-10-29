@@ -1,0 +1,1261 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url('../assets/fonts/museo-sans-cyrl/unzipped/Museo Sans Cyrl/Museo Sans Cyrl 100/Museo Sans Cyrl 100.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url('../assets/fonts/museo-sans-cyrl/unzipped/Museo Sans Cyrl/Museo Sans Cyrl 500/Museo Sans Cyrl 500.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url('../assets/fonts/museo-sans-cyrl/unzipped/Museo Sans Cyrl/Museo Sans Cyrl 700/Museo Sans Cyrl 700.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo Sans Cyrl';
+    src: url('../assets/fonts/museo-sans-cyrl/unzipped_900/Museo Sans Cyrl 900/Museo Sans Cyrl 900.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-orange: #FF9F68;
+    --bg-dark: #2E2E2E;
+    --bg-darker: #2E2E2E;
+    --text-white: #FFFFFF;
+    --grid-color: rgba(255, 255, 255, 0.08);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Exo 2', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: var(--bg-darker);
+    color: var(--text-white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Sticky Header - Only MUSEO SNEAKERS is fixed */
+.sticky-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(46, 46, 46, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    border-bottom: none;
+}
+
+.header-content.center-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    text-align: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+}
+
+.logo-museo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-orange);
+}
+
+.logo-sneakers {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-orange);
+    margin-top: 2px;
+}
+
+/* Ruler Section - Scrollable */
+.ruler-section {
+    position: relative;
+    width: 100vw;
+    background: var(--bg-darker);
+    /* Pull section up so the header covers the top half of the bars */
+    margin-top: -25.570325px; /* half of new 51.14065px */
+    /* Compensate spacing so overall flow below remains unchanged */
+    padding-top: calc(60px + 25.570325px);
+}
+
+/* Ruler Line */
+.ruler-line {
+    width: 100%;
+    height: 51.14065px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+.bar {
+    width: 6px;
+    display: block;
+}
+
+.bar-col {
+    width: 6px;
+    display: flex;
+    justify-content: center;
+}
+
+.bar.white {
+    height: 51.14065px;
+    background-color: #FFFFFF;
+}
+
+.bar.orange {
+    height: 37.7036px;
+    background-color: #FF9F68;
+}
+
+/* Numbers row beneath ticks */
+.ruler-numbers {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 8px 20px 0;
+}
+
+.num-col {
+    position: relative;
+    width: 6px;
+    height: 16px;
+}
+
+.num {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 24px;
+    font-weight: 100;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+}
+
+/* Remove old ruler styles */
+.ruler-marks,
+.mark,
+.tick,
+.number {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 250vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    padding-top: 40px;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Grid Overlay - Removed */
+.grid-overlay {
+    display: none;
+}
+
+/* Ellipse Background */
+.ellipse-background {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ellipse-image {
+    width: 1200px;
+    height: auto;
+    display: block;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand-label {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: clamp(18px, 1.5vw, 24px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--text-white);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.museo-title {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 227.63px;
+    font-weight: 900;
+    line-height: 152.72px;
+    color: transparent;
+    -webkit-text-stroke: 4px #FF9F68;
+    margin-top: 30px;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.hero-subtitle {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 100px;
+    font-weight: 500;
+    line-height: 70px;
+    color: #F4F4F4;
+    margin-bottom: 40px;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+.hero-description {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--text-white);
+    line-height: 1.5;
+    letter-spacing: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Sneaker Container */
+.sneaker-container {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: -100px;
+    width: 90%;
+    overflow: visible;
+}
+
+/* Sneaker Ruler Line - Horizontal bars behind sneaker */
+.sneaker-ruler-line {
+    position: absolute;
+    top: 63%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 51.14065px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.sneaker-bar {
+    width: 6px;
+    display: block;
+}
+
+.sneaker-bar.white {
+    height: 51.14065px;
+    background-color: #FFFFFF;
+    transform: translateY(0);
+}
+
+.sneaker-bar.orange {
+    height: 37.7036px;
+    background-color: #FF9F68;
+    transform: translateY(0);
+}
+
+.sneaker-image {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    display: block;
+    transform: translateX(-120px);
+    z-index: 2;
+}
+
+/* Vector Section - Below shoes */
+.vector-section {
+    position: relative;
+    width: 100%;
+    padding: 10px 0;
+    background-color: var(--bg-darker);
+    margin-top: -980px;
+}
+
+.vector-container {
+    position: relative;
+    width: 90%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.vector-52-3 {
+    width: 95%;
+    max-width: none;
+    height: auto;
+    display: block;
+    transform: translateX(-10px);
+    object-fit: contain;
+    z-index: 3;
+    position: relative;
+}
+
+.vector-52-4 {
+    width: 95%;
+    max-width: none;
+    height: auto;
+    display: block;
+    transform: translateX(-10px);
+    margin-top: -39px;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
+}
+
+.vector-52-5 {
+    width: 85%;
+    max-width: none;
+    height: auto;
+    display: block;
+    transform: translateX(-10px);
+    margin-top: -570px;
+    object-fit: contain;
+    z-index: 1;
+    position: relative;
+}
+
+/* About Project Section */
+.about-section {
+    position: relative;
+    width: 100%;
+    padding: 10px 0 150px 0;
+    background-color: var(--bg-darker);
+    margin-top: 10px;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.title-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.title-pattern {
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    width: 330px;
+    height: auto;
+    z-index: 1;
+}
+
+.title-pattern-right {
+    position: absolute;
+    right: -50px;
+    top: 100px;
+    width: 330px;
+    height: auto;
+    z-index: 1;
+    margin-top: -150px;
+}
+
+.title-pattern-left {
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    width: 550px;
+    height: auto;
+    z-index: 1;
+    margin-top: 280px;
+}
+
+.title-pattern-fourth {
+    position: absolute;
+    right: -50px;
+    top: 100px;
+    width: 570px;
+    height: auto;
+    z-index: 1; 
+    margin-top: 285px;
+}
+
+.about-title {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    color: var(--text-white);
+    text-align: center;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-text {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--primary-orange);
+    line-height: 1.01;
+    letter-spacing: 0.01em;
+    max-width: 100%;
+    margin-top: -140px;
+    padding: 0 120px 0 300px;
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.sneaker-down-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+}
+
+.sneaker-down {
+    width: 760px;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 5;
+}
+
+/* Ellipse 42 Lighting Effect */
+.ellipse-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.ellipse-42 {
+    display: none;
+}
+
+/* Add orange color overlay using ::before pseudo-element */
+.ellipse-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 450px;
+    background: radial-gradient(ellipse at center, rgba(255, 159, 104, 0.9) 0%, rgba(255, 159, 104, 0.4) 40%, transparent 70%);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(80px);
+    box-shadow: 0 0 100px rgba(255, 159, 104, 0.4);
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Glyphs Section */
+.glyphs-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 0;
+    background-color: var(--bg-darker);
+    margin-top: -280px;
+}
+
+.glyphs-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Top Section */
+.glyphs-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    z-index: 100;
+}
+
+.speech-bubble-left,
+.speech-bubble-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 350px;
+    z-index: 102;
+}
+
+.speech-bubble-left {
+    flex-direction: row;
+}
+
+.speech-bubble-right {
+    flex-direction: row-reverse;
+}
+
+.speech-vector {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+}
+
+.speech-text {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 103;
+}
+
+.central-number {
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 101;
+}
+
+.big-number {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 92px;
+    font-weight: 900;
+    color: var(--text-white);
+    line-height: 1;
+}
+
+.number-label {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-orange);
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+/* Middle Section - Ruler Lines */
+.glyphs-middle {
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.glyphs-design-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150%;
+    transform: translateY(-50px);
+}
+
+.rectangle-83 {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+}
+
+.group-581 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: auto;
+    display: block;
+    z-index: 2;
+}
+
+/* Package Section */
+.package-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 0;
+    background-color: var(--bg-darker);
+}
+
+.package-content {
+    max-width: 1200px;
+    margin: -300px auto ;
+    padding: 0 40px;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package-title {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--text-white);
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.package-subtitle {
+    color: var(--primary-orange);
+}
+
+.package-left-decoration {
+    position: absolute;
+    left: 0;
+    margin-top: 520px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: auto;
+    z-index: 1;
+}
+
+.package-right-decoration {
+    position: absolute;
+    right: 0;
+    margin-top: 520px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: auto;
+    z-index: 0;
+}
+
+.package-center-decoration {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1300px;
+    height: auto;
+    z-index: 2;
+    margin-top: 2300px;
+}
+
+/* Frame Section */
+.frame-section {
+    position: relative;
+    width: 100%;
+    padding: 120px 0;
+    background-color: var(--bg-darker);
+}
+
+.frame-content {
+    max-width: 1200px;
+    margin: 450px ;
+    padding: 0 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1px;
+}
+
+.frame-left {
+    width: 570px;
+    height: auto;
+    display: block;
+    transform: translateX(-25px);
+}
+
+.frame-right {
+    width: 570px;
+    height: auto;
+    display: block;
+    transform: translateX(25px);
+}
+
+/* Languages Section */
+.languages-section {
+    position: relative;
+    width: 100%;
+    padding: 0 0 40px 0;
+    background-color: var(--bg-darker);
+}
+
+.languages-content {
+    max-width: 1200px;
+    margin: -500px auto 0;
+    padding: 0 40px;
+    position: relative;
+}
+
+.languages-lighting {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -600px;
+}
+
+.languages-ellipse-container {
+    position: absolute;
+    top: calc(50% + 120px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* New last lighting Ellipse 43 */
+.languages-ellipse-43 {
+    width: 855px;
+    height: 855px;
+    object-fit: contain;
+    filter: blur(80px) brightness(1.5);
+    opacity: 0.9;
+    animation: pulse-glow 3s ease-in-out infinite;
+    transform: scaleX(1.2);
+}
+
+.languages-ellipse-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(1.2);
+    width: 855px;
+    height: 855px;
+    background: radial-gradient(circle, #FF9F68, transparent 70%);
+    border-radius: 50%;
+    z-index: 2;
+    pointer-events: none;
+    filter: blur(50px);
+}
+
+.languages-title {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.languages-number {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 150px;
+    font-weight: 500;
+    color: var(--primary-orange);
+    line-height: 1;
+}
+
+.languages-word {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size:120px;
+    font-weight: 500;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.languages-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.language-card {
+    position: relative;
+    width: 231px;
+    height: 210px;
+    margin: 0 auto;
+    z-index: 15;
+}
+
+.language-card-bg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    transform: translateX(-10px);
+    z-index: 1;
+    position: relative;
+}
+
+.language-card-content {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    z-index: 5;
+}
+
+.language-name {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: translateY(10px);
+}
+
+.language-char {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 135px;
+    font-weight: 500;
+    color: var(--primary-orange);
+    line-height: 1;
+}
+
+/* Frame 516 Section */
+.frame-516-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+}
+
+.frame-516-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.frame-516 {
+    width: 90%;
+    max-width: 895px;
+    height: auto;
+    display: block;
+}
+
+/* Sneaker Pattern Section */
+.sneaker-pattern-section {
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    margin-top: -150px;
+    z-index: -1;
+}
+
+.sneaker-pattern-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sneaker-pattern {
+    width: 119%;
+    max-width: 1420px;
+    height: auto;
+    display: block;
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .museo-title {
+        font-size: 180px;
+        -webkit-text-stroke: 2.5px var(--primary-orange);
+    }
+    
+    .hero-subtitle {
+        font-size: 72px;
+    }
+    
+    .hero-description {
+        font-size: 26px;
+    }
+    
+    .big-number {
+        font-size: 65px;
+    }
+    
+    .number-label {
+        font-size: 28px;
+    }
+    
+    .speech-bubble-left,
+    .speech-bubble-right {
+        width: 280px;
+    }
+    
+    .speech-text {
+        font-size: 24px;
+    }
+    
+    .ruler-marks {
+        padding: 0 10px;
+    }
+    
+    .languages-number {
+        font-size: 120px;
+    }
+    
+    .languages-word {
+        font-size: 48px;
+    }
+    
+    .languages-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+    }
+    
+    .language-card {
+        width: 231px;
+        height: 210px;
+    }
+    
+    .language-name {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    .language-char {
+        font-size: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .museo-title {
+        font-size: 120px;
+        -webkit-text-stroke: 2px var(--primary-orange);
+    }
+    
+    .hero-subtitle {
+        font-size: 48px;
+    }
+    
+    .hero-description {
+        font-size: 20px;
+    }
+    
+    .hero-description {
+        font-size: 18px;
+    }
+    
+    .glyphs-top {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .big-number {
+        font-size: 55px;
+    }
+    
+    .number-label {
+        font-size: 24px;
+    }
+    
+    .speech-bubble-left,
+    .speech-bubble-right {
+        width: 240px;
+    }
+    
+    .speech-text {
+        font-size: 20px;
+    }
+    
+    .number {
+        font-size: 12px;
+    }
+    
+    .tick.major {
+        height: 20px;
+    }
+    
+    .tick.minor {
+        height: 10px;
+    }
+    
+    .languages-number {
+        font-size: 80px;
+    }
+    
+    .languages-word {
+        font-size: 36px;
+    }
+    
+    .languages-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+    
+    .language-card {
+        width: 189px;
+        height: 173px;
+    }
+    
+    .language-name {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .language-char {
+        font-size: 72px;
+    }
+}
+
+@media (max-width: 480px) {
+    .museo-title {
+        font-size: 60px;
+    }
+    
+    .hero-subtitle {
+        font-size: 28px;
+    }
+    
+    .big-number {
+        font-size: 45px;
+    }
+    
+    .number-label {
+        font-size: 20px;
+    }
+    
+    .speech-bubble-left,
+    .speech-bubble-right {
+        width: 200px;
+    }
+    
+    .speech-text {
+        font-size: 16px;
+    }
+    
+    .logo {
+        font-size: 14px;
+    }
+    
+    .number {
+        font-size: 10px;
+    }
+    
+    .languages-number {
+        font-size: 60px;
+    }
+    
+    .languages-word {
+        font-size: 28px;
+    }
+    
+    .languages-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .language-card {
+        width: 158px;
+        height: 144px;
+    }
+    
+    .language-name {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .language-char {
+        font-size: 54px;
+    }
+}
+
+
+/* Completion Section */
+.completion-section {
+    position: relative;
+    width: 100%;
+    padding: 80px 0;
+    background-color: var(--bg-darker);
+    min-height: 300px;
+}
+
+.completion-section .container {
+    position: relative;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.completion-middle {
+    text-align: center;
+    z-index: 2;
+    margin-top: -100px;
+}
+
+.completion-middle h2 {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 57.6px;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.completion-middle p {
+    font-family: 'Museo Sans Cyrl', sans-serif;
+    font-size: 28.8px;
+    font-weight: 500;
+    color: white;
+    margin: 10px 0;
+}
+
+.completion-middle .name-text {
+    font-size: 31.68px;
+    margin-top: 30px;
+}
+
+.completion-middle .orange-text {
+    color: #FF9F68;
+}
+
+.completion-corner {
+    position: absolute;
+    margin-top: 250px;
+    left: 30;
+    transform: translateX(-30px);
+    z-index: 1;
+}
+
+.completion-ellipse {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50px;
+    bottom: 100px;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.7;
+    filter: blur(50px);
+    mix-blend-mode: screen;
+    background: radial-gradient(circle, #FF9F68);
+}
+
+.completion-ellipse-right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -1150px;
+    top: 40px;
+    transform: translateY(-50%);
+    z-index: 0;
+    opacity: 0.7;
+    filter: blur(50px);
+    mix-blend-mode: screen;
+    background: radial-gradient(circle, #FF9F68);
+}
+
+.school-logo {
+    height: 60px;
+    width: auto;
+    margin-left: 50px;
+    position: relative;
+    z-index: 2;
+}
